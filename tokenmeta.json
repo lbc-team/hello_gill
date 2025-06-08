@@ -1,0 +1,12 @@
+{
+    "name": "UPChain Test Token",
+    "symbol": "UPCT",
+    "description": "UPChain for blockchain developers",
+    "image": "https://img.learnblockchain.cn/banners/5gjbPyej6667ccfe30baf.png",
+    "attributes": [
+      {
+        "trait_type": "Item",
+        "value": "UPChain"
+      }
+    ]
+  }
