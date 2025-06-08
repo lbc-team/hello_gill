@@ -6,6 +6,7 @@ import {
     SolanaClusterMoniker,
     getSignatureFromTransaction,
     signTransactionMessageWithSigners,
+    address,
   } from "gill";
   import { loadKeypairSignerFromFile } from "gill/node";
   import { getTransferSolInstruction } from "gill/programs";
@@ -33,12 +34,19 @@ import {
   const { rpc, sendAndConfirmTransaction } = createSolanaClient({
     urlOrMoniker: cluster,
   });
-  
 
-  const receiver = "8gwAbvN8t7n7PoTqWhuqPJ7s4Vgov1YNPByMBJavgHJt";
+  // 查询发送方账户余额
+  const { value: senderBalance } = await rpc.getBalance(signer.address).send();
+  console.log("发送方账户余额（SOL）:", Number(senderBalance) / 1_000_000_000);
+
+  const receiver = address("8gwAbvN8t7n7PoTqWhuqPJ7s4Vgov1YNPByMBJavgHJt");
+  
+  // 查询接收方账户余额
+  const { value: receiverBalanceBefore } = await rpc.getBalance(receiver).send();
+  console.log("接收方账户余额（转账前）（SOL）:", Number(receiverBalanceBefore) / 1_000_000_000);
+
   /**
-   * 创建一个 memo 指令，在链上发布一条简单消息
-   *（最简单的指令类型！）
+   * 创建一个转账指令
    */
   const transferSolIx =  getTransferSolInstruction({
     amount: 1_000,
@@ -63,8 +71,8 @@ import {
     instructions: [transferSolIx],
     latestBlockhash,
   });
-  console.log("Transaction:");
-  console.log(tx);
+  // console.log("Transaction:");
+  // console.log(tx);
   
   /**
    * 使用提供的 `signer` 对交易进行签名
@@ -100,9 +108,18 @@ import {
     //   skipPreflight: true,
     //   maxRetries: 10n,
     // });
-  
+
     console.log("Transaction confirmed!", signature);
+
+
   } catch (err) {
     console.error("Unable to send and confirm the transaction");
     console.error(err);
   }
+
+  // 转账成功后再次查询双方余额
+  const { value: senderBalanceAfter } = await rpc.getBalance(signer.address).send();
+  console.log("发送方账户余额（转账后）（SOL）:", Number(senderBalanceAfter) / 1_000_000_000);
+
+  const { value: receiverBalanceAfter } = await rpc.getBalance(receiver).send();
+  console.log("接收方账户余额（转账后）（SOL）:", Number(receiverBalanceAfter) / 1_000_000_000);
