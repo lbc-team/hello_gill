@@ -2,6 +2,8 @@
 参考视频：https://learnblockchain.cn/video/play/1248
 参考代码：https://github.com/solana-foundation/gill/tree/master/examples/tokens
 
+
+
 ## 工程初始化
 
 hello_gill 是一个 TypeScript 工程
@@ -72,7 +74,9 @@ SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Met
 
 铸造 Token， 先创建 ata account (使用 CreateIdempotent 指令，如果账户已经存在，什么都不做) ， 然后铸造 Token， 参考[tx1](https://explorer.solana.com/tx/8jzbfVB2VFJ5Sa8ppWPevkxnVGm2mdFy9qFsqmjEKA1CyyyXjLoQY3Z9CpQv2sFFPkTEwJRMeYuM45hRP2MJy66?cluster=devnet) , [tx2](https://explorer.solana.com/tx/2YEahcxkePScbNZUkncY5pq53vK6ao1Mu3ALRhNn8qQnASES9TKetv2axrYyna8NB9bnpPTqPW3Ga82JFQgJXi7G?cluster=devnet)
 
+### easy_mint_token.ts
 
+铸造 Token , mint_token.ts 的更简单版本，使用一个方法： `buildMintTokensTransaction`
 
 
 
