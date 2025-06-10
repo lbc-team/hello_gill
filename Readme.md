@@ -78,6 +78,9 @@ SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Met
 
 铸造 Token , mint_token.ts 的更简单版本，使用一个方法： `buildMintTokensTransaction`
 
+### src/3_transfer_token.ts 和 3_easy_transfer_token.ts
+
+Token 转账
 
 
 ## 运行
