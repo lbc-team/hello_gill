@@ -61,13 +61,16 @@ SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Met
 
 ### src/easy_create_token.ts
 
-使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token 
+使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token , 例如这个 [Token](https://explorer.solana.com/address/CT1RcDHat3KZpg3kkj3MCQuMP7xduLRgk1QRyySnSdKL?cluster=devnet)
 
 
+### src/easy_create_token2022.ts
 
-
+使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token2022, 例如这个 [Token](https://explorer.solana.com/address/2WGmr7AmXgFnonvHCDiu4GMaHtHxiVfa53rMv3CnNGXf?cluster=devnet)
 
 ## 运行
+
+pnpx esrun 加文件名：
 
 ```
 pnpx esrun ./src/transfer_sol.ts
