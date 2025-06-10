@@ -26,11 +26,11 @@ pnpm add @types/node typescript
 
 ## 功能介绍：
 
-### transfer_sol.ts：
+### 0_transfer_sol.ts：
 
 Sol 转账交易
 
-### create_token.ts
+### 1_create_token.ts
 
 创建 Token （Mint）， 默认是没有 Meta 信息的, 例如：[这个Token](https://explorer.solana.com/address/4fzXpMnMK3xc6wGf9xuLg56gVCqKXeQybEJ4x3jEXc9X?cluster=devnet) , Mint 账户记录着这些信息：
 decimals : 小数位数 
@@ -43,7 +43,7 @@ https://github.com/solana-program/token/blob/main/program/src/state.rs
 
 Mint 账户代表着 token 的“身份”， SPL Token 相关程序（比如钱包、DEX、DeFi）都以 mint 为判断 token 类型的依据。
 
-###  create_token_with_metadata.ts
+###  1_create_token_with_metadata.ts
 
 
 创建 Token 有 Meta 信息（注意Token 名称等信息，不是唯一的）
@@ -61,20 +61,20 @@ SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Met
 | `collection`              | 可选绑定到 NFT 集合                         |
 | `seller_fee_basis_points` | 用于 NFT 收费的费率（通常为 0）                  |
 
-### src/easy_create_token.ts
+### src/1_easy_create_token.ts
 
 使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token , 例如这个 [Token](https://explorer.solana.com/address/CT1RcDHat3KZpg3kkj3MCQuMP7xduLRgk1QRyySnSdKL?cluster=devnet)
 
 
-### src/easy_create_token2022.ts
+### src/1_easy_create_token2022.ts
 
 使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token2022, 例如这个 [Token](https://explorer.solana.com/address/2WGmr7AmXgFnonvHCDiu4GMaHtHxiVfa53rMv3CnNGXf?cluster=devnet)
 
-### mint_token.ts
+### 2_mint_token.ts
 
 铸造 Token， 先创建 ata account (使用 CreateIdempotent 指令，如果账户已经存在，什么都不做) ， 然后铸造 Token， 参考[tx1](https://explorer.solana.com/tx/8jzbfVB2VFJ5Sa8ppWPevkxnVGm2mdFy9qFsqmjEKA1CyyyXjLoQY3Z9CpQv2sFFPkTEwJRMeYuM45hRP2MJy66?cluster=devnet) , [tx2](https://explorer.solana.com/tx/2YEahcxkePScbNZUkncY5pq53vK6ao1Mu3ALRhNn8qQnASES9TKetv2axrYyna8NB9bnpPTqPW3Ga82JFQgJXi7G?cluster=devnet)
 
-### easy_mint_token.ts
+### 2_easy_mint_token.ts
 
 铸造 Token , mint_token.ts 的更简单版本，使用一个方法： `buildMintTokensTransaction`
 
