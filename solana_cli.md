@@ -1,4 +1,22 @@
 
+
+solana-keygen new --outfile 命令生成新的密钥对，后跟存储密钥对的文件路径。
+
+```
+solana-keygen new --outfile <FILE_PATH>
+solana-keygen new -o my.json
+
+solana-keygen grind --starts-with tiny:1
+
+```
+
+查看地址：
+```
+solana address
+solana address -k ~/.config/solana/second_id.json
+solana address -k my.json
+```
+
 查看网络与账号：
 
 ```
@@ -9,25 +27,17 @@ solana config get
 solana config set --url devnet 
 solana config set --url $DEVNET_RPC
 solana config set --url localhost 
-solana config set --url mainnet-beta
+solana config set  --url mainnet-beta
 ```
 
-查看地址：
-```
-solana address
-solana address -k ~/.config/solana/second_id.json
-```
 
-solana-keygen new --outfile 命令生成新的密钥对，后跟存储密钥对的文件路径。
 
-```
-solana-keygen new --outfile <FILE_PATH>
-```
 
 查看余额：
 ```
 solana balance
 solana balance <ACCOUNT_ADDRESS> --url https://api.devnet.solana.com
+solana balance -k my.json
 ```
 
 
