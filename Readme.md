@@ -59,6 +59,9 @@ SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Met
 | `collection`              | 可选绑定到 NFT 集合                         |
 | `seller_fee_basis_points` | 用于 NFT 收费的费率（通常为 0）                  |
 
+### src/easy_create_token.ts
+
+使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token 
 
 
 
