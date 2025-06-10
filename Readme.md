@@ -68,6 +68,14 @@ SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Met
 
 使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token2022, 例如这个 [Token](https://explorer.solana.com/address/2WGmr7AmXgFnonvHCDiu4GMaHtHxiVfa53rMv3CnNGXf?cluster=devnet)
 
+### mint_token.ts
+
+铸造 Token， 先创建 ata account (使用 CreateIdempotent 指令，如果账户已经存在，什么都不做) ， 然后铸造 Token， 参考[tx1](https://explorer.solana.com/tx/8jzbfVB2VFJ5Sa8ppWPevkxnVGm2mdFy9qFsqmjEKA1CyyyXjLoQY3Z9CpQv2sFFPkTEwJRMeYuM45hRP2MJy66?cluster=devnet) , [tx2](https://explorer.solana.com/tx/2YEahcxkePScbNZUkncY5pq53vK6ao1Mu3ALRhNn8qQnASES9TKetv2axrYyna8NB9bnpPTqPW3Ga82JFQgJXi7G?cluster=devnet)
+
+
+
+
+
 ## 运行
 
 pnpx esrun 加文件名：

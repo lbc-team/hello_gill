@@ -12,6 +12,11 @@ solana config set --url localhost
 solana config set --url mainnet-beta
 ```
 
+查看地址：
+```
+solana address
+solana address -k ~/.config/solana/second_id.json
+```
 
 solana-keygen new --outfile 命令生成新的密钥对，后跟存储密钥对的文件路径。
 
