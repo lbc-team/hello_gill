@@ -81,7 +81,7 @@ import {
           uses: null,
           name: "UPChain Test Token",
           symbol: "UPCT",
-          uri: "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/tokenmeta.json",
+          uri: "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/metadata/tokenmeta.json",
         },
       }),
     ],

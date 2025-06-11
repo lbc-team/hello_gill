@@ -1,0 +1,78 @@
+{
+  "name": "UPChain Hero #002",
+  "symbol": "UPH",
+  "description": "神秘的冰霜法师，掌控寒冰之力。她的法杖能够召唤暴风雪，冰封敌人的行动。作为史诗级的魔法师，她的智慧和法力在战场上无人能敌。",
+  "image": "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/nft_image.jpg",
+  "animation_url": "",
+  "external_url": "https://upchain.co/heroes/002",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Ice"
+    },
+    {
+      "trait_type": "Class",
+      "value": "Mage"
+    },
+    {
+      "trait_type": "Power",
+      "value": 88
+    },
+    {
+      "trait_type": "Health",
+      "value": 720
+    },
+    {
+      "trait_type": "Attack",
+      "value": 880
+    },
+    {
+      "trait_type": "Defense",
+      "value": 650
+    },
+    {
+      "trait_type": "Speed",
+      "value": 750
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Frost Staff"
+    },
+    {
+      "trait_type": "Special Ability",
+      "value": "Blizzard Storm"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Frozen Tundra"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "#002"
+    }
+  ],
+  "properties": {
+    "category": "image",
+    "creators": [
+      {
+        "address": "6oLiQn73H8EWnbo5sSuFx1V4KNAasBgFP39puLR9Emaw",
+        "share": 100
+      }
+    ],
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/metadata/nft_image.jpg",
+        "type": "image/jpg"
+      }
+    ]
+  },
+  "collection": {
+    "name": "UPChain Heroes Collection",
+    "family": "UPChain"
+  },
+  "seller_fee_basis_points": 500
+} 

@@ -1,0 +1,55 @@
+{
+  "name": "UPChain Genesis NFT #001",
+  "symbol": "UPNFT",
+  "description": "这是 UPChain 生态系统的第一个 NFT 收藏品。代表着去中心化技术的创新精神和区块链世界的无限可能。",
+  "image": "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/metadata/nft_image.jpg",
+  "animation_url": "",
+  "external_url": "https://upchain.co",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Collection",
+      "value": "UPChain Origins"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "#001"
+    },
+    {
+      "trait_type": "Creator",
+      "value": "UPChain Team"
+    },
+    {
+      "trait_type": "Blockchain",
+      "value": "Solana"
+    },
+    {
+      "trait_type": "Token Standard",
+      "value": "Token-2022"
+    },
+    {
+      "trait_type": "Creation Date",
+      "value": "2024"
+    },
+    {
+      "trait_type": "Power Level",
+      "value": "9000"
+    }
+  ],
+  "properties": {
+    "category": "image",
+    "creators": [
+      {
+        "address": "6oLiQn73H8EWnbo5sSuFx1V4KNAasBgFP39puLR9Emaw",
+        "share": 100
+      }
+    ]
+  },
+  "collection": {
+    "name": "UPChain Genesis Collection",
+    "family": "UPChain"
+  }
+} 

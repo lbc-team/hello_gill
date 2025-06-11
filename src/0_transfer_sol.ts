@@ -19,7 +19,7 @@ import {
   const signer = await loadKeypairSignerFromFile();
   console.log("address:", signer.address);
 
-  const signer2 = await loadKeypairSignerFromFile("my.json");
+  const signer2 = await loadKeypairSignerFromFile("keypairs/my.json");
   console.log("address2:", signer2.address);
   
   /**

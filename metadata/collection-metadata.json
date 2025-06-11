@@ -1,0 +1,54 @@
+{
+  "name": "UPChain Heroes Collection",
+  "symbol": "UPHC",
+  "description": "UPChain 英雄系列的官方收藏集。这个系列包含了各种拥有独特能力和稀有度的英雄角色，每个英雄都有其独特的元素属性和战斗职业。收藏完整的英雄系列，组建你的终极战队！",
+  "image": "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/metadata/nft_image.jpg",
+  "animation_url": "",
+  "external_url": "https://upchain.co/heroes-collection",
+  "attributes": [
+    {
+      "trait_type": "Collection Type",
+      "value": "Heroes"
+    },
+    {
+      "trait_type": "Total Supply",
+      "value": "100"
+    },
+    {
+      "trait_type": "Blockchain",
+      "value": "Solana"
+    },
+    {
+      "trait_type": "Token Standard",
+      "value": "Token-2022"
+    },
+    {
+      "trait_type": "Creation Date",
+      "value": "2024"
+    },
+    {
+      "trait_type": "Creator",
+      "value": "UPChain Team"
+    }
+  ],
+  "properties": {
+    "category": "image",
+    "creators": [
+      {
+        "address": "6oLiQn73H8EWnbo5sSuFx1V4KNAasBgFP39puLR9Emaw",
+        "share": 100
+      }
+    ],
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/metadata/nft_image.jpg",
+        "type": "image/jpg"
+      }
+    ]
+  },
+  "collection": {
+    "name": "UPChain Heroes Collection",
+    "family": "UPChain"
+  },
+  "seller_fee_basis_points": 500
+} 

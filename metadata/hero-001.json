@@ -1,0 +1,78 @@
+{
+  "name": "UPChain Hero #001",
+  "symbol": "UPH",
+  "description": "勇敢的火焰战士，拥有传说级的力量。他的剑刃燃烧着永不熄灭的火焰，能够在战场上所向披靡。作为英雄系列中的传奇角色，他的出现往往预示着胜利的来临。",
+  "image": "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/metadata/nft_image.jpg",
+  "animation_url": "",
+  "external_url": "https://upchain.co/heroes/001",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Fire"
+    },
+    {
+      "trait_type": "Class",
+      "value": "Warrior"
+    },
+    {
+      "trait_type": "Power",
+      "value": 95
+    },
+    {
+      "trait_type": "Health",
+      "value": 850
+    },
+    {
+      "trait_type": "Attack",
+      "value": 920
+    },
+    {
+      "trait_type": "Defense",
+      "value": 780
+    },
+    {
+      "trait_type": "Speed",
+      "value": 650
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "Flame Blade"
+    },
+    {
+      "trait_type": "Special Ability",
+      "value": "Inferno Strike"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Volcanic Peaks"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "#001"
+    }
+  ],
+  "properties": {
+    "category": "image",
+    "creators": [
+      {
+        "address": "6oLiQn73H8EWnbo5sSuFx1V4KNAasBgFP39puLR9Emaw",
+        "share": 100
+      }
+    ],
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/lbc-team/hello_gill/refs/heads/main/metadata/nft_image.jpg",
+        "type": "image/jpg"
+      }
+    ]
+  },
+  "collection": {
+    "name": "UPChain Heroes Collection",
+    "family": "UPChain"
+  },
+  "seller_fee_basis_points": 500
+} 

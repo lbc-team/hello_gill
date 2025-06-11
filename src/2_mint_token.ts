@@ -30,11 +30,11 @@ import {
   
   const owner = address("6oLiQn73H8EWnbo5sSuFx1V4KNAasBgFP39puLR9Emaw");
   
-
+  // 获取 associated token account 账户地址(PDA)
   const ata = await getAssociatedTokenAccountAddress(mint, owner, TOKEN_PROGRAM_ADDRESS);
   console.log("ata:", ata);
   
-  // 获取Token余额的方法
+  // 获取 Token 余额的方法
   async function getTokenBalance(tokenAccount: string) {
     try {
       const response = await rpc.getTokenAccountBalance(address(tokenAccount)).send();
