@@ -6,6 +6,7 @@ solana-keygen new --outfile 命令生成新的密钥对，后跟存储密钥对�
 solana-keygen new --outfile <FILE_PATH>
 solana-keygen new -o my.json
 
+# 靓号
 solana-keygen grind --starts-with tiny:1
 
 ```
