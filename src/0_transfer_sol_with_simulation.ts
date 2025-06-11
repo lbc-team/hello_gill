@@ -50,12 +50,25 @@ const transferSolIx = getTransferSolInstruction({
 const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
 console.log("⏰ 获取最新区块哈希:", latestBlockhash.blockhash);
 
-// 创建交易
+// 💰 设置优先费参数
+const priorityFeeRate = 50_000; // 50,000 micro-lamports = 0.05 lamports per compute unit
+const computeUnitLimit = 200_000; // 设置计算单位限制
+
+console.log("⚡ 优先费设置:");
+console.log("===============");
+console.log("🚀 优先费率:", priorityFeeRate, "micro-lamports/compute unit");
+console.log("📊 计算单位限制:", computeUnitLimit);
+console.log("💰 最大优先费:", (priorityFeeRate * computeUnitLimit / 1_000_000).toFixed(6), "SOL");
+
+// 创建交易（包含优先费设置）
 const tx = createTransaction({
   version: "legacy",
   feePayer: signer,
   instructions: [transferSolIx],
   latestBlockhash,
+  // 🔥 添加优先费设置
+  computeUnitLimit: computeUnitLimit,      // 设置计算单位限制
+  computeUnitPrice: priorityFeeRate,       // 设置优先费率（micro-lamports per compute unit）
 });
 
 // 签名交易
@@ -101,11 +114,31 @@ try {
   console.log("✅ 模拟交易成功!");
   console.log("⚡ 消耗计算单位:", simulation.value.unitsConsumed || "未知");
   
-  // 修复数值计算类型问题
-  const unitsConsumed = Number(simulation.value.unitsConsumed || 5000);
-  console.log("💰 预估交易费用:", (unitsConsumed * 0.000001).toFixed(9), "SOL");
-  console.log("💵 转账金额:", transferAmount / 1_000_000_000, "SOL");
+  // 计算交易费用详情
+  const actualUnitsConsumed = Number(simulation.value.unitsConsumed || 5000);
+  const baseFee = 5000; // 基础交易费用 (lamports)
+  const priorityFee = (actualUnitsConsumed * priorityFeeRate) / 1_000_000; // 优先费 (lamports)
+  const totalFee = baseFee + priorityFee; // 总费用 (lamports)
   
+  console.log("💰 交易费用明细:");
+  console.log("================");
+  console.log("📍 基础交易费:", (baseFee / 1_000_000_000).toFixed(9), "SOL");
+  console.log("🚀 优先费:", (priorityFee / 1_000_000_000).toFixed(9), "SOL");
+  console.log("💵 总交易费:", (totalFee / 1_000_000_000).toFixed(9), "SOL");
+  console.log("💎 转账金额:", transferAmount / 1_000_000_000, "SOL");
+  
+  // 优先费效果说明
+  console.log("\n🎯 优先费说明:");
+  console.log("==============");
+  if (priorityFee > 0) {
+    console.log("✅ 已设置优先费，交易将获得更高处理优先级");
+    console.log("⚡ 在网络拥堵时，优先费可大幅提升交易成功率");
+    console.log("💡 优先费 = 实际消耗计算单位 × 费率");
+    console.log(`📊 ${actualUnitsConsumed} units × ${priorityFeeRate} micro-lamports = ${priorityFee.toFixed(0)} lamports`);
+  } else {
+    console.log("⚠️  未设置优先费，可能在网络拥堵时处理较慢");
+  }
+
   // 显示执行日志
   if (simulation.value.logs && simulation.value.logs.length > 0) {
     console.log("📋 执行日志:");
@@ -184,6 +217,31 @@ try {
  * ✅ 处理模拟成功但实际失败的情况
  * ✅ 为用户提供清晰的反馈信息
  * 
+ * 🚀 优先费设置最佳实践
+ * ====================
+ * 
+ * 💰 优先费计算公式：
+ *    优先费 = 计算单位消耗 × 优先费率（micro-lamports/unit）
+ * 
+ * 📊 常用优先费率推荐：
+ *    • 低优先级: 1,000 - 10,000 micro-lamports
+ *    • 中优先级: 10,000 - 50,000 micro-lamports  
+ *    • 高优先级: 50,000 - 100,000 micro-lamports
+ *    • 紧急处理: 100,000+ micro-lamports
+ * 
+ * ⚡ 优先费设置技巧：
+ *    • 网络空闲时可设置较低费率或不设置
+ *    • 网络拥堵时建议设置较高费率
+ *    • 时间敏感交易应设置高优先费
+ *    • 可通过模拟预估实际计算单位消耗
+ * 
+ * 🎯 计算单位限制建议：
+ *    • 简单转账: 200,000 units
+ *    • Token操作: 300,000 - 500,000 units
+ *    • 复杂DeFi交易: 800,000 - 1,400,000 units
+ *    • 设置过低会导致交易失败
+ *    • 设置过高只是浪费（不会额外收费）
+ * 
  * 📋 常见模拟错误及解决方案
  * ========================
  * 
@@ -193,4 +251,5 @@ try {
  * InvalidInstruction → 验证指令参数
  * MissingRequiredSignature → 确保所有必需签名
  * AccountAlreadyInUse → 等待账户释放或使用其他账户
+ * ExceededMaxComputeUnits → 增加计算单位限制
  */ 
