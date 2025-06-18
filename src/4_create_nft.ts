@@ -61,9 +61,6 @@ import {
     mint,
     latestBlockhash,
     tokenProgram,
-    // 💡 为 NFT 设置优先费，确保创建成功 
-    computeUnitLimit: 400_000,
-    computeUnitPrice: 50_000,
   });
   
   const signedCreateTx = await signTransactionMessageWithSigners(createNftTx);

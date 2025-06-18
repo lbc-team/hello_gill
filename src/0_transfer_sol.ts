@@ -56,6 +56,12 @@ import {
     destination: receiver,
     source: signer,
   });
+
+  const transferSolIx2 = getTransferSolInstruction({
+    amount: 1_000_000,
+    destination: signer2.address,
+    source: signer,
+  });
   
   /**
    * 获取最新的区块哈希（即交易生命周期）。这相当于区块链处理交易时的一个最近时间戳
@@ -71,7 +77,7 @@ import {
   let tx = createTransaction({
     version: "legacy",
     feePayer: signer2,
-    instructions: [transferSolIx],
+    instructions: [transferSolIx],  // [transferSolIx, transferSolIx2]
     latestBlockhash,
   });
 

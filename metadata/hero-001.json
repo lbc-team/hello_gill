@@ -11,22 +11,6 @@
       "value": "Legendary"
     },
     {
-      "trait_type": "Element",
-      "value": "Fire"
-    },
-    {
-      "trait_type": "Class",
-      "value": "Warrior"
-    },
-    {
-      "trait_type": "Power",
-      "value": 95
-    },
-    {
-      "trait_type": "Health",
-      "value": 850
-    },
-    {
       "trait_type": "Attack",
       "value": 920
     },
@@ -37,18 +21,6 @@
     {
       "trait_type": "Speed",
       "value": 650
-    },
-    {
-      "trait_type": "Weapon",
-      "value": "Flame Blade"
-    },
-    {
-      "trait_type": "Special Ability",
-      "value": "Inferno Strike"
-    },
-    {
-      "trait_type": "Background",
-      "value": "Volcanic Peaks"
     },
     {
       "trait_type": "Edition",
