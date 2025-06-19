@@ -91,7 +91,18 @@ NFT 创建铸造转账
 
 ### src/4_create_nft_collection.ts
 
-NFT 合集及合集内NFT  创建铸造转账
+NFT 合集及合集内NFT  创建铸造转账。
+gill 目前的版本创建的 NFT 没法通过Collection 验证， 通过 4_diagnose_collection.ts 排查，发现原因是  gill 无法创建 Master Edition 账户 。
+
+Master Edition 账户： 表示唯一原始版本（或源 NFT），也是作为 NFT 集合（Collection）的标识。
+普通的 Edition 账户则表示复制品或印刷品。
+
+### src/5_create_metaplex_collection.ts
+
+创建NFT合集及合集内NFT, 并验证。
+这里是一个[示例](https://explorer.solana.com/address/9PqzLS9hETdB9MkNJMQz5DjnjQKdLEWEqStuS66SjzX4?cluster=devnet)
+
+相关地址参考： metaplex-collection-addresses.json
 
 ## 运行
 
