@@ -52,7 +52,7 @@ Mint 账户代表着 token 的“身份”， SPL Token 相关程序（比如钱
 创建 Token 有 Meta 信息（注意Token 名称等信息，不是唯一的）
 例如[这个 Token](https://explorer.solana.com/address/GkoTqdPyXFnEg27ZrRZbd5D1Hgb2M76aQ44Ed9vqZLot/metadata?cluster=devnet) .
 
-SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Metadata Program , 通过 mint 账户，创建 mintPDA 账户来保存
+SPL Token 默认是没有 Meta 信息的，惯例是使用 Metaplex 的 Token Metadata Program , 通过 mint 账户作为seed ，创建 metadatePDA 账户来保存
 
 
 | 字段                        | 描述                                   |
@@ -85,6 +85,13 @@ SPL Token 默认是没有Meta 信息的，惯例是使用 Metaplex 的 Token Met
 
 Token 转账
 
+### src/4_create_nft.ts
+
+NFT 创建铸造转账
+
+### src/4_create_nft_collection.ts
+
+NFT 合集及合集内NFT  创建铸造转账
 
 ## 运行
 

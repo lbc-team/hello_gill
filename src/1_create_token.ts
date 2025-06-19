@@ -35,6 +35,7 @@ import {
   const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
   
   const tokenProgram = TOKEN_PROGRAM_ADDRESS;
+
   const mint = await generateKeyPairSigner();
   console.log("mint:", mint.address);
   

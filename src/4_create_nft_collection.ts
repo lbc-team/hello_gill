@@ -29,8 +29,8 @@ import {
    * Collection 合集创建
    * 
    * Collection 架构：
-   * 1. Collection NFT (父级) - 代表整个系列
-   * 2. Individual NFTs (子级) - 每个都引用 Collection NFT
+   * 1. Collection NFT - 代表整个系列
+   * 2. 子NFTs - 每个都引用 Collection MINT NFT
    * 3. 链上验证关系 - Collection Key + verified 状态
    * 
    */
@@ -41,7 +41,6 @@ import {
   });
   
   const signer = await loadKeypairSignerFromFile();
-  console.log("👤 创建者:", signer.address);
   
   // Collection 配置
   const collectionConfig = {

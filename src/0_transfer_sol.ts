@@ -7,6 +7,7 @@ import {
     getSignatureFromTransaction,
     signTransactionMessageWithSigners,
     address,
+    LAMPORTS_PER_SOL,
   } from "gill";
   import { loadKeypairSignerFromFile } from "gill/node";
   import { getTransferSolInstruction } from "gill/programs";
@@ -58,7 +59,7 @@ import {
   });
 
   const transferSolIx2 = getTransferSolInstruction({
-    amount: 1_000_000,
+    amount: LAMPORTS_PER_SOL,
     destination: signer2.address,
     source: signer,
   });
@@ -76,8 +77,8 @@ import {
    */
   let tx = createTransaction({
     version: "legacy",
-    feePayer: signer2,
-    instructions: [transferSolIx],  // [transferSolIx, transferSolIx2]
+    feePayer: signer,
+    instructions: [transferSolIx, transferSolIx2],  // [transferSolIx, transferSolIx2]
     latestBlockhash,
   });
 
