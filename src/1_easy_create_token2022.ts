@@ -24,6 +24,7 @@ import {
   const mint = await generateKeyPairSigner();
   console.log("mint:", mint.address);
   
+  // cQwQU6WZCQMYrGbnh47UmJmTLpnk7FZueSSYh14u5JR
   const tx = await buildCreateTokenTransaction({
     feePayer: signer,
     version: "legacy",

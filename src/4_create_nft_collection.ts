@@ -30,7 +30,6 @@ import {
    * Collection 架构：
    * 1. Collection NFT - 代表整个系列
    * 2. 子NFTs - 每个都引用 Collection MINT NFT
-   * 3. 链上验证关系 - Collection Key + verified 状态
    * 
    */
   

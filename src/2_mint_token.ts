@@ -26,7 +26,7 @@ import {
   
   const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
   
-  const mint = address("GkoTqdPyXFnEg27ZrRZbd5D1Hgb2M76aQ44Ed9vqZLot");
+  const mint = address("5rt2CAAy6JzdCydM7R4mVitxDC7FNw5kKZJzr3arbD9u");
   
   const owner = address("6oLiQn73H8EWnbo5sSuFx1V4KNAasBgFP39puLR9Emaw");
   
@@ -78,7 +78,7 @@ import {
           mint,
           mintAuthority: signer,
           token: ata,
-          amount: 1_000_000_000,
+          amount: 100_000_000_000,
         },
         {
           programAddress: TOKEN_PROGRAM_ADDRESS,

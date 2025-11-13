@@ -14,7 +14,7 @@ import {
   console.log("address:", signer.address);
   
   // 从keypair文件加载密钥对签名者
-  const signer2 = await loadKeypairSignerFromFile("my.json");
+  const signer2 = await loadKeypairSignerFromFile("keypairs/my.json");
   console.log("address2:", signer2.address);
 
   // 生成新的密钥对

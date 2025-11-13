@@ -46,6 +46,13 @@ https://github.com/solana-program/token/blob/main/program/src/state.rs
 
 Mint 账户代表着 token 的“身份”， SPL Token 相关程序（比如钱包、DEX、DeFi）都以 mint 为判断 token 类型的依据。
 
+
+### src/1_easy_create_token.ts
+
+使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token , 例如这个 [Token](https://explorer.solana.com/address/CT1RcDHat3KZpg3kkj3MCQuMP7xduLRgk1QRyySnSdKL?cluster=devnet)
+
+
+
 ###  1_create_token_with_metadata.ts
 
 
@@ -63,10 +70,6 @@ SPL Token 默认是没有 Meta 信息的，惯例是使用 Metaplex 的 Token Me
 | `creators`                | Token 创作者列表（可选）                      |
 | `collection`              | 可选绑定到 NFT 集合                         |
 | `seller_fee_basis_points` | 用于 NFT 收费的费率（通常为 0）                  |
-
-### src/1_easy_create_token.ts
-
-使用 gill/programs/token 提供的 buildCreateTokenTransaction 来创建 Token , 例如这个 [Token](https://explorer.solana.com/address/CT1RcDHat3KZpg3kkj3MCQuMP7xduLRgk1QRyySnSdKL?cluster=devnet)
 
 
 ### src/1_easy_create_token2022.ts
@@ -87,11 +90,11 @@ Token 转账
 
 ### src/4_create_nft.ts
 
-NFT 创建铸造转账
+NFT 创建铸造
 
 ### src/4_create_nft_collection.ts
 
-NFT 合集及合集内NFT  创建铸造转账。
+NFT 合集及合集内 NFT  创建铸造转账。
 gill 目前的版本创建的 NFT 没法通过Collection 验证， 通过 4_diagnose_collection.ts 排查，发现原因是  gill 无法创建 Master Edition 账户 。
 
 Master Edition 账户： 表示唯一原始版本（或源 NFT），也是作为 NFT 集合（Collection）的标识。
@@ -109,6 +112,6 @@ Master Edition 账户： 表示唯一原始版本（或源 NFT），也是作为
 pnpx esrun 加文件名：
 
 ```
-pnpx esrun ./src/transfer_sol.ts
+pnpx esrun ./src/0_transfer_sol.ts
 ```
 

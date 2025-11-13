@@ -23,7 +23,7 @@ import {
   
   const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
   
-  const mint = address("CT1RcDHat3KZpg3kkj3MCQuMP7xduLRgk1QRyySnSdKL");
+  const mint = address("HeLpHNEGKWKAXt8J9ccEKG7s968cyXPxRHvrDSdQL6BH");
   
   const owner = address("6oLiQn73H8EWnbo5sSuFx1V4KNAasBgFP39puLR9Emaw");
   

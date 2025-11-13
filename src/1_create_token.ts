@@ -22,7 +22,7 @@ import {
   
   
   const cluster = process.env.DEVNET_RPC || "devnet";
-  console.log("process.env.DEVNET_RPC:", process.env.DEVNET_RPC);
+  // console.log("process.env.DEVNET_RPC:", process.env.DEVNET_RPC);
   console.log("cluster:", cluster);
 
   const { rpc, sendAndConfirmTransaction } = createSolanaClient({
@@ -40,9 +40,8 @@ import {
   console.log("mint:", mint.address);
   
   const space = getMintSize();
-  
-   
 
+  // 5rt2CAAy6JzdCydM7R4mVitxDC7FNw5kKZJzr3arbD9u
   const tx = createTransaction({
     feePayer: signer,
     version: "legacy",

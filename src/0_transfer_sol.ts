@@ -26,8 +26,8 @@ import {
   /**
    * 声明要与哪个 Solana 网络集群交互
    */
-  const cluster = process.env.DEVNET_RPC || "devnet";
-  console.log("process.env.DEVNET_RPC:", process.env.DEVNET_RPC);
+  const cluster = process.env.LOCAL_PRC || "localnet";
+  // console.log("process.env.DEVNET_RPC:", process.env.DEVNET_RPC);
   console.log("cluster:", cluster);
   
   /**
@@ -59,7 +59,7 @@ import {
   });
 
   const transferSolIx2 = getTransferSolInstruction({
-    amount: LAMPORTS_PER_SOL,
+    amount: 0.1 * LAMPORTS_PER_SOL,
     destination: signer2.address,
     source: signer,
   });
@@ -92,7 +92,7 @@ import {
   console.log("Explorer Link:");
   console.log(
     getExplorerLink({
-      cluster: "devnet",
+      cluster: "localnet",
       transaction: signature,
     }),
   );

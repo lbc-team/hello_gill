@@ -20,7 +20,7 @@ import {
   
   const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
   
-  const mint = address("GkoTqdPyXFnEg27ZrRZbd5D1Hgb2M76aQ44Ed9vqZLot");
+  const mint = address("HeLpHNEGKWKAXt8J9ccEKG7s968cyXPxRHvrDSdQL6BH");
   const tokenProgram = TOKEN_PROGRAM_ADDRESS; // use the correct program for the `mint`
   
   // 钱包地址
